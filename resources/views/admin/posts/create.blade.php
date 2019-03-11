@@ -8,15 +8,17 @@
     @slot('title') Создание новости @endslot
     @slot('parent') Главная @endslot
     @slot('active') Новости @endslot
+
+    @slot('entity') /post @endslot
   @endcomponent
 
   <hr />
 
-  <form class="form-horizontal" action="{{route('admin.article.store')}}" method="post">
+  <form class="form-horizontal" action="{{route('admin.post.store')}}" method="post">
     {{ csrf_field() }}
 
     {{-- Form include --}}
-    @include('admin.articles.partials.form')
+    @include('admin.posts.partials.form')
 
     <input type="hidden" name="created_by" value="{{Auth::id()}}">
   </form>

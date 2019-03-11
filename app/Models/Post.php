@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Post extends Model
 {
@@ -18,6 +19,6 @@ class Post extends Model
     // Polymorphic relation with categories
     public function categories()
     {
-      return $this->morphToMany('App\Category', 'categoryable');
+      return $this->morphToMany('App\Models\Category', 'categoryable');
     }
 }
